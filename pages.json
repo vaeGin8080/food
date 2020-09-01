@@ -6,7 +6,25 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/circle/circle",
+			"style": {
+				"navigationBarTitleText": "卡友圈"
+			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "订单"
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
@@ -15,5 +33,37 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"backgroundColor": "#FDFDFE",
+		"color": "#706753",
+		"selectedColor": "#FE474F",
+		"fontSize": "10px",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/tab-act1.png",
+				"selectedIconPath": "static/tabbar/tab-act1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/circle/circle",
+				"iconPath": "static/tabbar/tab2.png",
+				"selectedIconPath": "static/tabbar/tab2.png",
+				"text": "卡友圈"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"iconPath": "static/tabbar/tab3.png",
+				"selectedIconPath": "static/tabbar/tab3.png",
+				"text": "订单"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"iconPath": "static/tabbar/tab4.png",
+				"selectedIconPath": "static/tabbar/tab4.png",
+				"text": "我的"
+			}
+		]
 	}
 }
