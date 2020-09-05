@@ -36,7 +36,7 @@
 		},
 		data() {
 			return {
-				bg: require('@/static/img/member-store-juan.png')
+				bg: require('@/static/img/gua1.png')
 			}
 		}
 	}

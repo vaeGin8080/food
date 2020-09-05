@@ -2,8 +2,9 @@
 	<scroll-view class="store" scroll-x>
 		<view class="store-block" v-for="(item, index) in List" :key="index">
 			<view class="store-item"><image mode="aspectFill" :src="item.url"></image></view>
-			<view class="store-bottom">
+			<view class="store-bottom flex flex-direction">
 				<h3>{{ item.title }}</h3>
+				<view v-if="VIP" class="cz">成长值+100</view>
 				<text>{{ item.price }}积分</text>
 			</view>
 		</view>
@@ -18,6 +19,10 @@ export default {
 			default() {
 				return [];
 			}
+		},
+		VIP: {
+			type: Boolean,
+			default: false
 		}
 	},
 	data() {
@@ -58,6 +63,19 @@ export default {
 			color: $color;
 			font-size: 23rpx;
 		}
+		.cz {
+			display: inline-block;
+			width: 156rpx;
+			height: 33rpx;
+			background: #F6D1B5;
+			border-radius: 17rpx;
+			margin-bottom: 14rpx;
+			font-size: 22rpx;
+			color: #964B12;
+			text-align: center;
+			line-height: 33rpx;
+		}
+			
 	}
 }
 </style>

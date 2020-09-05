@@ -92,8 +92,55 @@
 			"style": {
 				"navigationBarTitleText": "积分商城"
 			}
+		}, {
+			"path": "pages/index/memberStore/memberStoreDetail/memberStoreDetail",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+			}
+		}, {
+			"path": "pages/index/memberStore/memberRecord/memberRecord",
+			"style": {
+				"navigationBarTitleText": "兑换记录"
+			}
+		}, {
+			"path": "pages/index/memberStore/memberStoreRule/memberStoreRule",
+			"style": {
+				"navigationBarTitleText": "积分规则"
+			}
 		}
-	],
+	    ,{
+            "path" : "pages/index/memberStore/memberStoreGua/memberStoreGua",
+            "style": {
+            	"navigationBarTitleText": "刮卡赢大奖"
+            }
+        }
+        ,{
+            "path" : "pages/index/memberStore/memberStoreGua/memberStoreMyJiang/memberStoreMyJiang",
+            "style": {
+            	"navigationBarTitleText": "我的奖品"
+            }
+        }
+        ,{
+            "path" : "pages/index/member/memberGride/memberGride",
+            "style": {
+            	"navigationStyle": "custom",
+            	"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+            }
+        }
+        ,{
+            "path" : "pages/index/member/memberGride/memberGrideGrow/memberGrideGrow",
+            "style" : {
+				"navigationBarTitleText": "我的成长值"
+			}
+        }
+        ,{
+            "path" : "pages/index/member/memberGride/memberGrideGift/memberGrideGift",
+            "style" : {
+            	"navigationBarTitleText": "会员礼包"
+            }
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

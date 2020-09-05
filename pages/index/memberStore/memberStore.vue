@@ -1,26 +1,26 @@
 <template>
 	<view class="wrap">
 		<view class="store-head flex align-center justify-between">
-			<view class="head-left flex align-center">
+			<navigator url="/pages/index/memberStore/memberStoreDetail/memberStoreDetail" class="head-left flex align-center">
 				<image src="@/static/img/member-store-monney.png"></image>
 				<text>1021</text>
 				<u-icon name="arrow-right" color="#FE4850" size="16"></u-icon>
-			</view>
-			<view class="head-right">
+			</navigator>
+			<navigator url="/pages/index/memberStore/memberStoreRule/memberStoreRule" class="head-right">
 				<text>规则</text>
 				<u-icon name="question-circle" color="#666666" size="23"></u-icon>
-			</view>
+			</navigator>
 		</view>
-		<view class="gk flex flex-direction align-center" :style="{ background: `url(${statics.$memberStoreGj}) no-repeat center`, backgroundSize: 'cover' }">
+		<navigator url="/pages/index/memberStore/memberStoreGua/memberStoreGua" class="gk flex flex-direction align-center" :style="{ background: `url(${statics.$memberStoreGj}) no-repeat center`, backgroundSize: 'cover' }">
 			<h1 class="gk-ga">刮卡赢大奖</h1>
 			<view class="gk-li"><text>众多好礼 唯等你来</text></view>
-		</view>
+		</navigator>
 		<view class="store-item">
 			<view class="store-top flex align-center justify-between">
 				<h2>积分秒杀</h2>
 				<view>
 					<text class="right-t">距开始仅剩</text>
-					<u-icon name="arrow-right" color="#666666" size="22"></u-icon>
+					<u-count-down :timestamp="timestamp" :show-days="false" :show-hours="true" bg-color="#FE474F" :show-border="false" font-size="22" color="#fff"></u-count-down>
 				</view>
 			</view>
 			<view class="ms flex align-center">
@@ -76,6 +76,7 @@
 				<h2>商品兑换</h2>
 			</view>
 			<recommendItem :List="goodsList" :breed="'member'"></recommendItem>
+			<u-loadmore :status="status" bg-color="#f1f1f1"/>
 		</view>
 	</view>
 </template>
@@ -85,18 +86,31 @@ import Json from '@/Json.js';
 import statics from '@/staticBG';
 import memerStoreItem from './memerStoreItem.vue'
 import memerStoreExchange from './memerStoreExchange.vue'
-import memerStoreVip from './memerStoreVip.vue'
+import memerStoreVip from '@/components/memerStoreVip/memerStoreVip.vue'
 import recommendItem from '../recommendItem.vue';
 export default {
 	components: {memerStoreItem,memerStoreExchange,memerStoreVip,recommendItem},
 	data() {
 		return {
 			statics,
+			timestamp: 1000,
+			status: 'loadmore',
 			jfList: Json.jfList,
 			monthList: Json.monthList,
 			exChangeList: Json.swiperList,
 			goodsList: Json.swiperList,
 		};
+	},
+	onReachBottom() {
+		this.init()
+	},
+	methods: {
+		init() {
+			setTimeout(()=>{
+				this.goodsList = this.goodsList.concat(Json.swiperList)
+				this.status = 'loading'
+			},500)
+		},
 	}
 };
 </script>
@@ -166,6 +180,8 @@ export default {
 	.right-t {
 		font-size: 23rpx;
 		color: #666666;
+		display: inline-block;
+		margin-right: 10rpx;
 	}
 	.ms {
 		height: 165rpx;

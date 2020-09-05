@@ -162,24 +162,28 @@ const jfList = [
 		desc: '全场通用',
 		fullPrice: 39,
 		count: 3,
-		points: 300
+		points: 300,
+		title: '新人礼（限兑1次）'
 	},
 	{
 		price: 2,
 		type: 'CASH',
 		fullPrice: 10,
-		points: 200
+		points: 200,
+		title: '保温杯'
 	},
 	{
 		price: 3,
 		type: 'CASH',
-		points: 300
+		points: 300,
+		title: '保温杯'
 	},
 	{
 		price: 10,
 		type: 'GIFT',
 		fullPrice: 49,
-		points: 1000
+		points: 1000,
+		title: '保温杯'
 	}
 ]
 

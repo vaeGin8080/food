@@ -34,11 +34,12 @@
 			<view class="recommend-nav flex justify-around align-center">
 				<view class="flex-sub flex align-center justify-center" v-for="(item, index) in recommendList" :key="index">
 					<text>{{ item.label }}</text>
-					<u-icon name="arrow-right" color="#25344A" size="22"></u-icon>
+					<u-icon name="arrow-down" color="#25344A" size="22"></u-icon>
 					<!-- <image src="../../static/img/jiantou.png"></image>	 -->
 				</view>
 			</view>
-			<recommendItem :List="swiperList"></recommendItem>
+			<recommendItem :List="goodsList"></recommendItem>
+			<u-loadmore :status="status" bg-color="#f1f1f1"/>
 		</view>
 		<u-popup v-model="show" mode="center" :zoom="false" :mask-close-able="false">
 			<view class="member">
@@ -63,6 +64,7 @@ export default {
 		return {
 			statics,
 			show: false,
+			status: 'loadmore',
 			recommendList: [{ label: '星级', id: 1 }, { label: '价格', id: 2 }, { label: '折扣', id: 3 }, { label: '时间', id: 4 }],
 			list: Json.bannerlList,
 			navList: [
@@ -92,11 +94,21 @@ export default {
 					url: '/pages/index/memberStore/memberStore'
 				}
 			],
-			swiperList: Json.swiperList
+			swiperList: Json.swiperList,
+			goodsList: Json.swiperList,
 		};
 	},
 	onLoad() {},
+	onReachBottom() {
+		this.init()
+	},
 	methods: {
+		init() {
+			setTimeout(()=>{
+				this.goodsList = this.goodsList.concat(Json.swiperList)
+				this.status = 'loading'
+			},500)
+		},
 		jump(url) {
 			if(url) {
 				uni.navigateTo({

@@ -22,4 +22,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	.zmoon {
+		text {
+			color: $color;
+		}
+	}
+	.moon {
+		font-size: 33rpx;
+		color: #333333;
+	}
 </style>

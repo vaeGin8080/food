@@ -71,7 +71,9 @@
 				right: 13rpx;
 				width: 43rpx;
 				height: 27rpx;
-				background-color: #FFEEE0;
+				// background-color: #FFEEE0;
+				background: url(../../../static/img/member-zhang-bg.png) no-repeat center;
+				background-size: cover;
 				font-size: 19rpx;
 				text-align: center;
 				line-height: 27rpx;

@@ -5,7 +5,7 @@
 			<view class="banner-content">
 				<view class="banner-user flex align-center">
 					<image mode="aspectFill" src="https://vaegin.top/img/mm.jpg"></image>
-					<text class="user-name">优异</text>
+					<text class="user-name">晓风残月</text>
 					<text class="user-dj">VIP1</text>
 				</view>
 				<view class="member-cj flex align-center justify-between">
@@ -13,21 +13,21 @@
 						<text>341</text>
 						<text>我的成长值</text>
 					</view>
-					<view class="member-sj flex-ali">
+					<navigator url="/pages/index/member/memberGride/memberGride" class="member-sj flex-ali">
 						<text>
 							还差
 							<text style="color: #FBE685;">78</text>
 							成长值升级为VIP2
 						</text>
 						<u-icon name="arrow-right" color="#fff" size="22"></u-icon>
-					</view>
+					</navigator>
 				</view>
 				<view></view>
 				<view class="member-hy">
-					<view class="hy flex align-center justify-between">
+					<navigator url="/pages/index/member/memberGride/memberGrideGift/memberGrideGift" class="hy flex align-center justify-between">
 						<text>VIP会员，每月均可领取优惠券</text>
 						<text class="lq">立即领取</text>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>
@@ -48,10 +48,10 @@
 			<view class="member-item jf-wrap">
 				<view class="flex align-center justify-between">
 					<h2>赚积分</h2>
-					<view @click="pointMore">
+					<navigator url="/pages/index/member/payPoint/payPoint">
 						<text class="right-t">全部</text>
 						<u-icon name="arrow-right" color="#666666" size="22"></u-icon>
-					</view>
+					</navigator>
 				</view>
 				<view class="jf-item flex align-center justify-between u-border-bottom">
 					<view class="jf-title flex align-center">
@@ -68,14 +68,14 @@
 					<text class="jf-btn">去下单</text>
 				</view>
 			</view>
-			<view class="friend" :style="{ background: `url(${statics.$memberFriend})`, backgroundSize: 'cover' }" @click="goFriend"></view>
+			<navigator url="/pages/index/member/inviteFriend/inviteFriend" class="friend" :style="{ background: `url(${statics.$memberFriend})`, backgroundSize: 'cover' }"></navigator>
 			<view class="member-item">
 				<view class="flex align-center justify-between">
 					<h2>积分兑换</h2>
-					<view>
+					<navigator url="/pages/index/memberStore/memberStore">
 						<text class="right-t">积分商城</text>
 						<u-icon name="arrow-right" color="#666666" size="22"></u-icon>
-					</view>
+					</navigator>
 				</view>
 				<view class="jf-change flex align-center justify-around">
 					<view class="change-left">
@@ -115,16 +115,6 @@ export default {
 				url: url
 			})
 		},
-		pointMore() {
-			uni.navigateTo({
-				url: '/pages/index/member/payPoint/payPoint'
-			})
-		},
-		goFriend() {
-			uni.navigateTo({
-				url: '/pages/index/member/inviteFriend/inviteFriend'
-			})
-		}
 	}
 };
 </script>
